@@ -6,7 +6,11 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class MovieControllerTest extends WebTestCase
 {
-    public function testTitle(): void
+
+    // TESTS FONCTIONNELS
+
+    // Test affichage de la page /movie
+    public function testMovie(): void
     {   
 
         // This calls KernelTestCase::bootKernel(), and creates a
@@ -20,6 +24,15 @@ class MovieControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h1', 'Movie index');
 
+    }
+
+    // Test affichage de la page /movie/new
+    public function testAddMovie(): void
+    {   
+        $client = static::createClient();
+        $client->request('GET', 'https://localhost:8000/movie/new');
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h1', 'Create new Movie');
     }
 
 }
