@@ -21,8 +21,8 @@ class MoviePantherTest extends PantherTestCase
         $crawler = $client->request('GET', 'https://localhost:8000/movie/new');
 
         $form = $crawler->selectButton('Save')->form([
-            'movie[name]'                       => 'Yes Man',
-            'movie[description]'                => 'Un film positif',
+            'movie[name]'                       => 'Un film test',
+            'movie[description]'                => 'Une description test',
             'movie[release_date][date][month]'  => '5',
             'movie[release_date][date][day]'    => '24',
             'movie[release_date][date][year]'   => '2016',
