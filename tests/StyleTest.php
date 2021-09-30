@@ -5,9 +5,6 @@ namespace App\Tests;
 use App\Entity\Movie;
 use App\Entity\Style;
 use PHPUnit\Framework\TestCase;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
-
 
 class StyleTest extends TestCase
 {
@@ -36,4 +33,5 @@ class StyleTest extends TestCase
         $style->addMovie($movie);
         $this->assertTrue(count($style->getMovies()) != 0);
     }
+    
 }
